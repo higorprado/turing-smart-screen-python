@@ -46,7 +46,7 @@ STATS:
         BAR_OUTLINE: True
         BACKGROUND_IMAGE: background.png
     FREQUENCY:
-      INTERVAL: 5
+      INTERVAL: 2
       TEXT:
         SHOW: True
         SHOW_UNIT: True
@@ -57,7 +57,7 @@ STATS:
         FONT_COLOR: 255, 239, 8
         BACKGROUND_IMAGE: background.png
     TEMPERATURE:
-      INTERVAL: 5
+      INTERVAL: 2
       TEXT:
         SHOW: True
         SHOW_UNIT: True

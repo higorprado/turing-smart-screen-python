@@ -497,18 +497,9 @@ class GpuAmd(sensors.Gpu):
         float, float, float, float, float]:  # load (%) / used mem (%) / used mem (Mb) / total mem (Mb) / temp
 
 
-        clock = temp = 0
+        temp = 0
         used_gb = 0.0
         try:
-            clock_path = f"/sys/class/drm/{card}/device/pp_dpm_sclk"
-            if os.path.exists(clock_path):
-                with open(clock_path) as f:
-                    for line in f:
-                        if "*" in line:
-                            parts = line.strip().split(":")[-1].strip().split("Mhz")[0]
-                            clock = int(parts)
-                            break
-
             temp_path = f"/sys/class/drm/{card}/device/hwmon"
             for entry in os.listdir(temp_path):
                 sensor_path = os.path.join(temp_path, entry, "temp1_input")
